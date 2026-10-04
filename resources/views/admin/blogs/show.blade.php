@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <meta http-equiv="content-language" content="ar" />
+
+    <meta name="theme-color" content="#133235" />
+
+    <meta name="color-scheme" content="light" />
+
+    <title>{{ $blog->title }} | عيادات أدلينا</title>
+
+    <meta name="description" content="{{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 160) }}" />
+
+    <meta name="keywords"
+        content="عيادات أدلينا, أدلينا كلينك, {{ $blog->category }}, عيادات تجميل, عيادات جلدية, ليزر, إزالة الشعر بالليزر, علاج تساقط الشعر, العناية بالبشرة, فلر, أسنان تجميلية, جراحة تجميل, عيادات الرياض" />
+
+    <meta name="author" content="Adelina Clinic" />
+
+    <meta name="publisher" content="Adelina Clinic" />
+
+    <meta name="application-name" content="Adelina Clinic" />
+
+
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.jpg') }}" />
+
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.jpg') }}" />
+
+    <meta property="og:type" content="article" />
+
+    <meta property="og:title" content="{{ $blog->title }} | عيادات أدلينا" />
+
+    <meta property="og:description"
+        content="{{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 160) }}" />
+
+
+    <meta property="og:site_name" content="عيادات أدلينا" />
+
+    <meta property="og:locale" content="ar_SA" />
+
+    <meta property="og:image" content="{{ asset('storage/' . $blog->image) }}" />
+
+    <meta property="og:image:secure_url" content="{{ asset('storage/' . $blog->image) }}" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="og:image:width" content="1200" />
+
+    <meta property="og:image:height" content="630" />
+
+    <meta property="og:image:alt" content="{{ $blog->title }}" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="{{ $blog->title }} | عيادات أدلينا" />
+
+    <meta name="twitter:description"
+        content="{{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 160) }}" />
+
+    <meta name="twitter:image" content="{{ asset('storage/' . $blog->image) }}" />
+
+    <meta name="twitter:image:alt" content="{{ $blog->title }}" />
+
+    <meta name="geo.region" content="SA-01" />
+
+    <meta name="geo.placename" content="Riyadh" />
+
+    <meta name="ICBM" content="24.7136, 46.6753" />
+
+    <meta name="contact" content="0557113838" />
+
+    <meta name="telephone" content="+966557113838" />
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+
+    @verbatim
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "MedicalClinic",
+                "name": "عيادات أدلينا",
+                "alternateName": "Adelina Clinic",
+                "url": "https://yourdomain.com/",
+                "logo": "https://yourdomain.com/assets/images/logo.png",
+                "image": "https://yourdomain.com/assets/images/clinic.jpg",
+                "description": "عيادات أدلينا تقدم خدمات متكاملة في الجلدية والتجميل والليزر والأسنان وجراحة التجميل.",
+                "telephone": "+966557113838",
+                "email": "support@exampledomain.com",
+                "priceRange": "$$",
+                "currenciesAccepted": "SAR",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "7530 طريق الأمير محمد بن سعد بن عبدالعزيز",
+                    "addressLocality": "الرياض",
+                    "postalCode": "13516",
+                    "addressCountry": "SA"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "24.7136",
+                    "longitude": "46.6753"
+                },
+                "areaServed": {
+                    "@type": "City",
+                    "name": "الرياض"
+                },
+                "sameAs": ["https://wa.me/966557113838"]
+            }
+        </script>
+    @endverbatim
+</head>
+
+<body>
+    <header id="mainHeader" class="main-header">
+        <div class="container-rtl">
+            <div class="header-inner">
+                <a href="/" class="logo-wrapper text-decoration-none">
+                    <div class="logo-icon py-3">
+                        <img src="{{ asset('images/logo-4.png') }}" height="48" alt="" class="" />
+                    </div>
+                </a>
+
+                <nav class="desktop-nav">
+                    <a href="/" class="nav-link-custom"> الرئيسية </a>
+
+                    <a href="/#about" class="nav-link-custom"> من نحن </a>
+
+                    <a href="/#services" class="nav-link-custom">
+                        الخدمات
+                    </a>
+
+                    <a href="/#contact" class="nav-link-custom">
+                        اتصل بنا
+                    </a>
+                    <a href="{{ route('blog.index') }}" class="nav-link-custom">
+                        المقالات
+                    </a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="tel:0557113838" class="phone-link text-decoration-none" dir="ltr">
+                        <i class="fas fa-phone-alt"></i>
+
+                        <span> 0557113838 </span>
+                    </a>
+
+                    <a href="/#contact" class="btn-accent-custom text-decoration-none">
+                        احجز الآن
+                    </a>
+                </div>
+
+                <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-label="فتح القائمة"
+                    aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileOverlay" class="mobile-overlay"></div>
+
+    <aside id="mobileMenu" class="mobile-menu" aria-label="القائمة الرئيسية">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <a href="/" class="logo-wrapper text-decoration-none">
+                    <div class="logo-icon py-3">
+                        <img src="{{ asset('images/logo-4.png') }}" height="98" alt="" />
+                    </div>
+                </a>
+            </div>
+
+            <button id="mobileMenuClose" class="mobile-close" type="button" aria-label="إغلاق القائمة">
+                <i class="fas fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="mobile-nav">
+            <a href="/" class="mobile-nav-link text-decoration-none">
+                <span> الرئيسية </span>
+
+                <i class="fas fa-chevron-left"></i>
+            </a>
+
+            <a href="/#about" class="mobile-nav-link text-decoration-none">
+                <span> من نحن </span>
+
+                <i class="fas fa-chevron-left"></i>
+            </a>
+
+            <a href="/#services" class="mobile-nav-link text-decoration-none">
+                <span> الخدمات </span>
+
+                <i class="fas fa-chevron-left"></i>
+            </a>
+
+            <a href="/#contact" class="mobile-nav-link text-decoration-none">
+                <span> اتصل بنا </span>
+
+                <i class="fas fa-chevron-left"></i>
+            </a>
+
+            <a href="{{ route('blog.index') }}" class="mobile-nav-link text-decoration-none">
+                <span> المقالات </span>
+
+                <i class="fas fa-chevron-left"></i>
+            </a>
+        </nav>
+
+        <div class="mobile-menu-footer">
+            <a href="tel:0557113838" class="mobile-phone text-decoration-none" dir="ltr">
+                <i class="fas fa-phone"></i>
+
+                <span> 0557113838 </span>
+            </a>
+
+            <a href="/#contact" class="btn-accent-custom mobile-book-btn text-decoration-none">
+                احجز موعدك الآن
+            </a>
+        </div>
+    </aside>
+
+    <section class="article-hero" id="articles">
+        <div class="article-hero-overlay"></div>
+        <div class="container position-relative">
+            <div class="article-hero-content" data-aos="fade-up">
+                <div class="breadcrumb-custom">
+                    <a href="{{ url('/') }}"> الرئيسية </a>
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <a href="{{ route('blog.index') }}"> المقالات </a>
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <span> {{ $blog->category }} </span>
+                </div>
+                <div class="article-category">{{ $blog->category }}</div>
+                <h1>{{ $blog->title }}</h1>
+                <div class="article-meta">
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                        {{-- {{ $blog->created_at->translatedFormat('d F Y') }} --}}
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            {{ max(1, ceil(str_word_count(strip_tags($blog->description)) / 200)) }}
+                            دقائق للقراءة
+                        </span>
+                        <span>
+                            <i class="fa-regular fa-user"></i> فريق عيادات
+                            أديلينا
+                        </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-section">
+        <div class="container">
+            <div class="row g-4" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <article class="article-content">
+                        <div class="article-main-image">
+                            <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" />
+                        </div>
+
+                        {{-- محتوى المقال الكامل (HTML) --}}
+                        {!! $blog->description !!}
+                    </article>
+                </div>
+                <div class="col-lg-4">
+                    <aside class="article-sidebar">
+                        <div class="sidebar-card author-card">
+                            <div class="author-icon">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                            <span> بقلم </span>
+                            <h3>فريق عيادات أديلينا</h3>
+                            <p>
+                                محتوى طبي وتوعوي يقدمه فريق متخصص لمساعدتك
+                                في اتخاذ قرارات أفضل لصحتك وجمالك.
+                            </p>
+                        </div>
+                        <div class="sidebar-card booking-card">
+                            <div class="booking-icon">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <h3>هل تحتاجين إلى استشارة؟</h3>
+                            <p>
+                                فريقنا الطبي جاهز لمساعدتك وتقديم الاستشارة
+                                المناسبة لاحتياجاتك.
+                            </p>
+                            <a href="https://wa.me/966557113838" target="_blank" class="sidebar-btn">
+                                <i class="fa-brands fa-whatsapp"></i> احجز
+                                عبر واتساب
+                            </a>
+                        </div>
+                        <div class="sidebar-card">
+                            <h3 class="sidebar-title">تصفح الأقسام</h3>
+                            <div class="sidebar-categories">
+                                @foreach ($categories as $category)
+                                    <a href="{{ route('blog.index', ['category' => $category]) }}">
+                                        {{ $category }}
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </a>
+                                @endforeach
+                            </div>
+                        </div>
+                        <a href="{{ route('blog.index') }}" class="back-to-blogs">
+                            <i class="fa-solid fa-arrow-right"></i> العودة
+                            إلى المقالات
+                        </a>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @if ($relatedBlogs->count() > 0)
+        <section class="related-section">
+            <div class="container">
+                <div class="related-header" data-aos="fade-up">
+                    <div>
+                        <span class="section-badge">
+                            <i class="fa-solid fa-book-open"></i> مقالات ذات صلة
+                        </span>
+                        <h2>قد يهمك <span>أيضاً</span></h2>
+                    </div>
+                    <a href="{{ route('blog.index') }}" class="all-blogs">
+                        جميع المقالات <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="row g-4" data-aos="fade-up">
+                    @foreach ($relatedBlogs as $related)
+                        <div class="col-lg-4 col-md-6">
+                            <article class="related-card">
+                                <div class="related-image">
+                                    <img src="{{ asset('storage/' . $related->image) }}"
+                                        alt="{{ $related->title }}" />
+                                    <span> {{ $related->category }} </span>
+                                </div>
+                                <div class="related-content">
+                                    <small> {{ $related->created_at->translatedFormat('d F Y') }} </small>
+                                    <h3>{{ $related->title }}</h3>
+                                    <a href="{{ route('blog.show', $related) }}">
+                                        اقرأ المقال
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <footer class="site-footer" dir="rtl">
+        <div class="footer-orb footer-orb-left"></div>
+        <div class="footer-orb footer-orb-right"></div>
+
+        <div class="footer-cta">
+            <div class="container">
+                <div class="row align-items-center justify-content-between g-4">
+                    <div class="col-lg-7">
+                        <h3 class="footer-cta-title">جاهزون للعناية بك؟</h3>
+
+                        <p class="footer-cta-text">
+                            احجز موعدك الآن واستمتع بتجربة متكاملة من الجمال
+                            والرعاية.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-auto">
+                        <a href="https://wa.me/966557113838" target="_blank" rel="noopener noreferrer"
+                            class="footer-whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            احجز الآن عبر واتساب
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-main">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="/" class="footer-brand">
+                            <div class="footer-logo">
+                                <img src="{{ asset('images/logo.jpg') }}" height="100" alt="" />
+                            </div>
+
+                            <div>
+                                <div class="footer-brand-name">
+                                    عيادات أدلينا
+                                </div>
+
+                                <div class="footer-brand-en">
+                                    ADELINA CLINIC
+                                </div>
+                            </div>
+                        </a>
+
+                        <p class="footer-description">
+                            وجهتك الأولى للجمال والصحة. خدمات متكاملة بأحدث
+                            التقنيات وأعلى معايير الجودة.
+                        </p>
+
+                        <div class="footer-social">
+                            <a href="https://www.instagram.com/adelinaclinic?igsh=MXNqNjJtMW02NWJ2Zw%3D%3D&utm_source=qr"
+                                target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+
+                            <a href="https://www.tiktok.com/@adelinaclinic?_t=zs-90huoaiey8y&_r=1" target="_blank"
+                                aria-label="Twitter">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+
+                            <a href="https://wa.me/966557113838" target="_blank" rel="noopener noreferrer"
+                                aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="footer-title">روابط سريعة</h4>
+
+                        <ul class="footer-links">
+                            <li>
+                                <a href="/">
+                                    <span></span>
+                                    الرئيسية
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/#about">
+                                    <span></span>
+                                    من نحن
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/#services">
+                                    <span></span>
+                                    الخدمات
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/#contact">
+                                    <span></span>
+                                    اتصل بنا
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('blog.index') }}">
+                                    <span></span>
+                                    المقالات
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="footer-title">خدماتنا</h4>
+
+                        <div class="footer-services">
+                            <div class="footer-service-group">
+                                <h5 class="footer-service-title">
+                                    <i class="fas fa-tooth"></i>
+                                    خدمات الأسنان
+                                </h5>
+
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            جميع علاجات الأسنان
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            زراعة الأسنان
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            تركيبات الأسنان
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            تقويم الأسنان المعدني والشفاف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="footer-service-group">
+                                <h5 class="footer-service-title">
+                                    <i class="fas fa-user-md"></i>
+                                    جراحة التجميل
+                                </h5>
+
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            شفط الدهون
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            شد البطن جراحيًا
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            حقن المؤخرة والأرداف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="footer-service-group">
+                                <h5 class="footer-service-title">
+                                    <i class="fas fa-spa"></i>
+                                    الجلدية والتجميل
+                                </h5>
+
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            حقن الفيلر والبوتكس
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            التقشير البارد
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            التقشير الكيميائي
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            إزالة الشعر بالليزر
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            علاج تساقط الشعر
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/#services">
+                                            <span></span>
+                                            العناية بالبشرة
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="footer-title">تواصل معنا</h4>
+
+                        <ul class="footer-contact">
+                            <li>
+                                <a href="tel:0557113838" class="footer-contact-item">
+                                    <div class="footer-contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+
+                                    <span dir="ltr"> 0557113838 </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://wa.me/966557113838" target="_blank" rel="noopener noreferrer"
+                                    class="footer-contact-item">
+                                    <div class="footer-contact-icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+
+                                    <span dir="ltr"> 0557113838 </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="mailto:adelinaclinics@gmail.com" class="footer-contact-item"
+                                    target="_blank">
+                                    <div class="footer-contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+
+                                    <span> adelinaclinics@gmail.com </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <div class="footer-contact-item">
+                                    <div class="footer-contact-icon">
+                                        <i class="fas fa-location-dot"></i>
+                                    </div>
+
+                                    <span>
+                                        RRHA7530، 7530 طريق الأمير محمد بن
+                                        سعد، الرياض 13516
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="mobile-bottom-nav d-lg-none" dir="rtl">
+            <div class="mobile-nav-container">
+                <a href="https://wa.me/966557113838" class="mobile-nav-item" aria-label="واتساب">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>واتساب</span>
+                </a>
+
+                <a href="tel:0557113838" class="mobile-nav-item" aria-label="اتصال">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>اتصال</span>
+                </a>
+
+                <a href="/#offers" class="mobile-nav-item mobile-nav-booking" aria-label="احجز الآن">
+                    <div class="booking-circle">
+                        <span class="fw-bold d-inline-block text-white">العروض</span>
+                    </div>
+                </a>
+
+                <a href="{{ route('doctors.index') }}" class="mobile-nav-item" aria-label="الأطباء">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <span>الأطباء</span>
+                </a>
+
+                <a href="/#departments" class="mobile-nav-item" aria-label="التخصصات">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <span>التخصصات</span>
+                </a>
+            </div>
+        </nav>
+        <div class="footer-bottom d-flex justify-content-center align-items-center">
+            <div class="container">
+                <a href="{{ route('policy') }}"
+                    class="text-white text-center text-decoration-none d-inline-block w-100">
+                    <span></span>
+                    سياسة الشروط والأحكام
+                </a>
+            </div>
+        </div>
+    </footer>
+    <div class="floating-actions">
+        <a href="https://wa.me/966557113838" class="floating-btn whatsapp-btn" target="_blank"
+            rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <a href="tel:+966557113838" class="floating-btn phone-btn" aria-label="اتصل بنا">
+            <i class="fas fa-phone"></i>
+        </a>
+
+        <button class="floating-btn top-btn" id="backToTop" aria-label="العودة إلى أعلى الصفحة">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="{{ asset('js/index.js') }}"></script>
+</body>
+
+</html>
